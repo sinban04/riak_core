@@ -277,8 +277,10 @@ handle_info(log_timer, StateName, State) ->
                     [State#state.pool_name,
                         QL,
                         LastCheckout  div (1000 * 1000)]),
+            ?LOG_INFO("injung1"),
             ok;
         {true, []} ->
+            ?LOG_INFO("injung2"),
             _ =
                 ?LOG_INFO(
                     "worker_pool=~w has qlen=0 and no items checked out",
